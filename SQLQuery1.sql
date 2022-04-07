@@ -89,11 +89,11 @@ Order by 1,2
 -- Looking at total population vs vaccination
 
 SELECT  dea.continent,
-		dea.location,
-		dea.date,
-		dea.population,
-		vac.new_vaccinations,
-		SUM(CAST(vac.new_vaccinations as bigint)) OVER (Partition by dea.location order by dea.location, dea.date) as total_people_vaccinated
+	dea.location,
+	dea.date,
+	dea.population,
+	vac.new_vaccinations,
+	SUM(CAST(vac.new_vaccinations as bigint)) OVER (Partition by dea.location order by dea.location, dea.date) as total_people_vaccinated
 FROM PortfolioProject..covid_deaths dea
 Join PortfolioProject..covid_vaccinations vac
 	On dea.location = vac.location

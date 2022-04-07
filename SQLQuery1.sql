@@ -1,4 +1,4 @@
-/* The data was taken from 'ourworldindata' 
+/* The data were taken from 'ourworldindata' 
    and are valid until the 3rd of April 2022 */
 
 SELECT *
